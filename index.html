@@ -4,10 +4,9 @@
   <meta charset="UTF-8" />
   <title>Smart Nagorik Seba</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Tailwind CSS -->
+  <meta name="description" content="Bangladesh government services hub for NID, Passport, BRTA, Tax, Education and more." />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Smooth transitions and focus styles */
     * { outline-color: #10b981; }
     .fade-in { animation: fadeIn 0.6s ease both; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(4px);} to { opacity: 1; transform: translateY(0);} }
@@ -21,9 +20,6 @@
     .shadow-soft { box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
     .shadow-card { box-shadow: 0 14px 40px rgba(0,0,0,0.18); }
     .pill { border-radius: 9999px; }
-    .truncate-2 {
-      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
-    }
     .backdrop {
       background: linear-gradient(120deg, rgba(16,185,129,.2), rgba(59,130,246,.2));
     }
@@ -59,7 +55,7 @@
       <p class="text-slate-300/90 mt-3">All essential government services in one trusted place</p>
       <div class="mt-8 inline-flex items-center gap-3 px-5 py-2 glass pill">
         <div class="w-4 h-4 border-2 border-emerald-300 border-t-transparent rounded-full spin"></div>
-        <span class="text-slate-200">Loading your services…</span>
+        <span class="text-slate-200">Loading your services...</span>
       </div>
     </div>
   </div>
@@ -75,6 +71,7 @@
             <path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1.5 1.1 1.7 1.7 0 0 1-3 0A1.7 1.7 0 0 0 9 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15 1.7 1.7 0 0 0 3.5 13.5a1.7 1.7 0 0 1 0-3A1.7 1.7 0 0 0 4.6 9a1.7 1.7 0 0 0-.34-1.88l-.06-.06A2 2 0 1 1 7.03 4.2l.06.06A1.7 1.7 0 0 0 9 4.6c.23-.64.82-1.1 1.5-1.1s1.27.46 1.5 1.1a1.7 1.7 0 0 0 1.91-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.7 1.7 0 0 0 19.4 9c.64.23 1.1.82 1.1 1.5s-.46 1.27-1.1 1.5Z" stroke="currentColor" stroke-width="1.5"/>
           </svg>
         </button>
+
         <div class="flex-1">
           <div class="flex items-center gap-3">
             <div class="w-9 h-9 rounded-xl bg-emerald-500/20 grid place-items-center">
@@ -89,14 +86,16 @@
             </div>
           </div>
         </div>
+
         <nav class="flex gap-2">
           <button id="tabAll" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-slate-100 transition">All Services</button>
           <button id="tabFav" class="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 transition">Favorites</button>
         </nav>
       </div>
+
       <div class="max-w-6xl mx-auto px-4 sm:px-6 pb-4">
         <div class="relative">
-          <input id="searchInput" type="text" placeholder="Search services (e.g., NID, Passport, BRTA)…" class="w-full px-5 py-3 pl-12 rounded-2xl bg-white/10 border border-white/10 placeholder:text-slate-400 text-slate-100 focus:bg-white/15 transition" />
+          <input id="searchInput" type="text" placeholder="Search services (e.g., NID, Passport, BRTA)..." class="w-full px-5 py-3 pl-12 rounded-2xl bg-white/10 border border-white/10 placeholder:text-slate-400 text-slate-100 focus:bg-white/15 transition" />
           <svg class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-slate-300" viewBox="0 0 24 24" fill="none">
             <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.5"/>
             <path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -108,7 +107,6 @@
 
     <!-- Content -->
     <main class="max-w-6xl mx-auto px-4 sm:px-6 py-6">
-      <!-- Empty States -->
       <div id="emptySearch" class="hidden text-center py-16">
         <div class="mx-auto w-16 h-16 rounded-2xl bg-white/10 grid place-items-center mb-4">
           <svg class="w-7 h-7 text-slate-300" viewBox="0 0 24 24" fill="none">
@@ -117,7 +115,7 @@
           </svg>
         </div>
         <h3 class="text-lg font-semibold">No results found</h3>
-        <p class="text-slate-400 mt-1">Try different keywords like “e-passport”, “Surokkha”, or “NCTB”.</p>
+        <p class="text-slate-400 mt-1">Try NID, Passport, Surokkha, BRTA or Education.</p>
       </div>
 
       <div id="emptyFavorites" class="hidden text-center py-16">
@@ -130,15 +128,13 @@
         <p class="text-slate-400 mt-1">Tap the star on any service to keep it handy here.</p>
       </div>
 
-      <!-- Sections -->
       <div id="sections" class="space-y-8"></div>
-      <!-- Favorites View -->
+
       <div id="favoritesView" class="hidden">
         <div id="favoritesGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
       </div>
     </main>
 
-    <!-- Bottom Note -->
     <footer class="max-w-6xl mx-auto px-4 sm:px-6 pb-10">
       <div class="glass rounded-2xl p-4 sm:p-5 text-sm text-slate-300">
         <div class="flex items-start gap-3">
@@ -148,14 +144,14 @@
           </svg>
           <div>
             <p class="font-medium text-slate-200">About this app</p>
-            <p class="mt-1">This is a helpful hub for citizens. Some links are pre-filled from public official sources; others are placeholders you can update. An admin/API can be connected later—use the Admin Demo to preview updates locally.</p>
+            <p class="mt-1">This is a simple citizen service hub. Some links are official, some are placeholders you can edit locally.</p>
           </div>
         </div>
       </div>
     </footer>
   </div>
 
-  <!-- Admin Demo Modal -->
+  <!-- Admin Modal -->
   <div id="adminModal" class="fixed inset-0 z-50 hidden">
     <div class="absolute inset-0 bg-black/60"></div>
     <div class="relative max-w-3xl mx-auto mt-10 lg:mt-16 bg-[#0f1627] border border-white/10 rounded-2xl shadow-card">
@@ -168,7 +164,7 @@
           </div>
           <div>
             <h3 class="font-semibold">Admin Demo</h3>
-            <p class="text-slate-400 text-sm -mt-0.5">Update services locally, or paste JSON to simulate an API</p>
+            <p class="text-slate-400 text-sm -mt-0.5">Update services locally or import JSON</p>
           </div>
         </div>
         <button id="closeAdmin" class="p-2 rounded-xl hover:bg-white/10">
@@ -177,32 +173,29 @@
           </svg>
         </button>
       </div>
+
       <div class="p-5 grid lg:grid-cols-2 gap-5">
         <div class="glass rounded-xl p-4">
-          <p class="text-sm text-slate-300 font-medium">Quick Edit</p>
-          <p class="text-xs text-slate-400 mt-1">Click any service’s ••• menu to rename or set a link. Changes are saved on your device.</p>
+          <p class="text-sm text-slate-300 font-medium">Quick Actions</p>
           <div class="mt-4 flex flex-wrap gap-2">
             <button id="btnResetData" class="px-3 py-2 rounded-lg bg-white/10 hover:bg-white/15 text-slate-100">Reset to Defaults</button>
             <button id="btnExportData" class="px-3 py-2 rounded-lg bg-white/10 hover:bg-white/15 text-slate-100">Export JSON</button>
           </div>
         </div>
+
         <div class="glass rounded-xl p-4">
-          <p class="text-sm text-slate-300 font-medium">Import JSON (simulate API)</p>
-          <p class="text-xs text-slate-400 mt-1">Paste JSON with categories and services. Example provided below.</p>
-          <textarea id="jsonInput" rows="8" class="mt-3 w-full px-3 py-2 rounded-lg bg-black/30 border border-white/10 text-slate-200 placeholder:text-slate-500" placeholder='{"categories":[{"id":"nid","name":"National ID","items":[{"id":"nid-service","title":"NID Service","url":"https://services.nidw.gov.bd/"}]}]}'></textarea>
+          <p class="text-sm text-slate-300 font-medium">Import JSON</p>
+          <textarea id="jsonInput" rows="8" class="mt-3 w-full px-3 py-2 rounded-lg bg-black/30 border border-white/10 text-slate-200 placeholder:text-slate-500" placeholder='{"categories":[{"id":"nid","name":"National ID","color":"emerald","items":[{"id":"nid-service","title":"NID Service","url":"https://services.nidw.gov.bd/","official":true}]}]}'></textarea>
           <div class="mt-3 flex gap-2">
             <button id="btnImportData" class="px-3 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white">Import</button>
             <button id="btnFillExample" class="px-3 py-2 rounded-lg bg-white/10 hover:bg-white/15 text-slate-100">Fill Example</button>
           </div>
         </div>
       </div>
-      <div class="p-5 border-t border-white/10 text-xs text-slate-400">
-        This is a demo-only panel. A real backend/admin can push updates via an API later.
-      </div>
     </div>
   </div>
 
-  <!-- Edit Service Modal -->
+  <!-- Edit Modal -->
   <div id="editModal" class="fixed inset-0 z-50 hidden">
     <div class="absolute inset-0 bg-black/60"></div>
     <div class="relative max-w-xl mx-auto mt-16 bg-[#0f1627] border border-white/10 rounded-2xl shadow-card">
@@ -221,6 +214,7 @@
           </svg>
         </button>
       </div>
+
       <div class="p-5 space-y-3">
         <div>
           <label class="text-sm text-slate-300">Title</label>
@@ -229,9 +223,9 @@
         <div>
           <label class="text-sm text-slate-300">Link (URL)</label>
           <input id="editUrl" placeholder="https://example.gov.bd/" class="mt-1 w-full px-3 py-2 rounded-lg bg-black/30 border border-white/10 text-slate-100" />
-          <p class="text-xs text-slate-400 mt-1">Tip: Use the official .gov.bd site if available.</p>
         </div>
       </div>
+
       <div class="p-5 border-t border-white/10 flex justify-end gap-2">
         <button id="btnDeleteService" class="px-4 py-2 rounded-xl bg-red-600/80 hover:bg-red-600 text-white">Delete</button>
         <button id="btnSaveEdit" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white">Save</button>
@@ -239,11 +233,9 @@
     </div>
   </div>
 
-  <!-- Toasts -->
   <div id="toastArea" class="fixed bottom-4 right-4 z-50 space-y-2"></div>
 
   <script>
-    // ------- Data (Defaults) -------
     const defaultData = {
       categories: [
         {
@@ -252,10 +244,9 @@
           color: "emerald",
           items: [
             { id: "nid-service", title: "NID Service Portal", url: "https://services.nidw.gov.bd/", official: true },
-            { id: "nid-main", title: "NID Information (NIDW)", url: "https://www.nidw.gov.bd/", official: true },
             { id: "bdris", title: "Birth & Death Registration (BDRIS)", url: "https://bdris.gov.bd/", official: true },
-            { id: "bdris-verify", title: "Birth/Death Certificate Verification", url: "https://everify.bdris.gov.bd/", official: true },
-            { id: "nid-placeholder", title: "NID Record Correction – Add Link", url: null, official: false },
+            { id: "bdris-verify", title: "Birth Certificate Verification", url: "https://everify.bdris.gov.bd/", official: true },
+            { id: "nid-placeholder", title: "NID Record Correction - Add Link", url: null, official: false }
           ]
         },
         {
@@ -264,44 +255,38 @@
           color: "teal",
           items: [
             { id: "epassport", title: "e-Passport Application", url: "https://www.epassport.gov.bd/", official: true },
-            { id: "mrp", title: "MRP Passport Information", url: "https://www.passport.gov.bd/", official: true },
-            { id: "visa", title: "Visa Information (Bangladesh)", url: "https://www.visa.gov.bd/", official: true },
-            { id: "passport-verify", title: "Passport Status – Add Link", url: null, official: false },
+            { id: "mrp", title: "Passport Information", url: "https://www.passport.gov.bd/", official: true },
+            { id: "visa", title: "Visa Information", url: "https://www.visa.gov.bd/", official: true }
           ]
         },
         {
           id: "brta",
-          name: "BRTA (Driving License, Vehicle Registration)",
+          name: "BRTA",
           color: "sky",
           items: [
-            { id: "brta-main", title: "Bangladesh Road Transport Authority", url: "https://www.brta.gov.bd/", official: true },
-            { id: "brta-bsp", title: "BRTA Service Portal (BSP)", url: "https://bsp.brta.gov.bd/", official: true },
-            { id: "dl-verify", title: "Driving License Verification", url: "https://dltv.brta.gov.bd/", official: true },
-            { id: "vehicle-reg", title: "Vehicle Registration – Add Link", url: null, official: false },
+            { id: "brta-main", title: "BRTA Main Site", url: "https://www.brta.gov.bd/", official: true },
+            { id: "brta-bsp", title: "BRTA Service Portal", url: "https://bsp.brta.gov.bd/", official: true },
+            { id: "dl-verify", title: "Driving License Verification", url: "https://dltv.brta.gov.bd/", official: true }
           ]
         },
         {
           id: "education",
-          name: "Education (Results, Scholarships, Admission, NCTB Books)",
+          name: "Education",
           color: "violet",
           items: [
             { id: "eb-res", title: "Education Board Results", url: "https://www.educationboardresults.gov.bd/", official: true },
-            { id: "eboard", title: "eBoard Results (Web Based)", url: "https://eboardresults.com/", official: true },
-            { id: "nctb", title: "NCTB e-Books", url: "https://nctb.gov.bd/site/view/ebooks", official: true },
             { id: "xi-admission", title: "XI Class Admission", url: "https://xiclassadmission.gov.bd/", official: true },
-            { id: "dshe", title: "DSHE (Notices & Scholarships)", url: "https://dshe.gov.bd/", official: true },
-            { id: "admission-uni", title: "University Admission – Add Link", url: null, official: false },
+            { id: "nctb", title: "NCTB e-Books", url: "https://nctb.gov.bd/site/view/ebooks", official: true }
           ]
         },
         {
           id: "jobs",
-          name: "Job Circulars (Govt & Private)",
+          name: "Job Circulars",
           color: "amber",
           items: [
-            { id: "bpsc", title: "Bangladesh Public Service Commission (BPSC)", url: "https://www.bpsc.gov.bd/", official: true },
-            { id: "teletalk-alljobs", title: "Govt Recruitment (Teletalk AllJobs)", url: "https://alljobs.teletalk.com.bd/", official: true },
-            { id: "mopa", title: "National Portal (Info)", url: "https://bangladesh.gov.bd/", official: true },
-            { id: "bdjobs", title: "Private Jobs (BDJobs)", url: "https://www.bdjobs.com/", official: false },
+            { id: "bpsc", title: "BPSC", url: "https://www.bpsc.gov.bd/", official: true },
+            { id: "teletalk-alljobs", title: "Teletalk AllJobs", url: "https://alljobs.teletalk.com.bd/", official: true },
+            { id: "bdjobs", title: "BDJobs", url: "https://www.bdjobs.com/", official: false }
           ]
         },
         {
@@ -309,33 +294,29 @@
           name: "Tax & VAT",
           color: "rose",
           items: [
-            { id: "nbr", title: "National Board of Revenue (NBR)", url: "https://nbr.gov.bd/", official: true },
+            { id: "nbr", title: "NBR", url: "https://nbr.gov.bd/", official: true },
             { id: "income-tax", title: "Income Tax e-Return", url: "https://www.incometax.gov.bd/", official: true },
-            { id: "vat-online", title: "VAT Online", url: "https://vat.gov.bd/", official: true },
-            { id: "etin", title: "e-TIN Services – Add Link", url: null, official: false },
+            { id: "vat-online", title: "VAT Online", url: "https://vat.gov.bd/", official: true }
           ]
         },
         {
           id: "land",
-          name: "Land & Property (e-Mutation, Land Tax, Map)",
+          name: "Land & Property",
           color: "cyan",
           items: [
-            { id: "land-main", title: "Land Services (Bhumi)", url: "https://land.gov.bd/", official: true },
+            { id: "land-main", title: "Land Services", url: "https://land.gov.bd/", official: true },
             { id: "emutation", title: "e-Mutation", url: "https://emutation.land.gov.bd/", official: true },
-            { id: "ldtax", title: "Land Development Tax", url: "https://ldtax.gov.bd/", official: true },
-            { id: "land-map", title: "Digital Land Map", url: "https://map.land.gov.bd/", official: true },
-            { id: "land-record", title: "Khatiyan/Porcha – Add Link", url: null, official: false },
+            { id: "ldtax", title: "Land Development Tax", url: "https://ldtax.gov.bd/", official: true }
           ]
         },
         {
           id: "complaints-police",
-          name: "Citizen Complaints & Police Services",
+          name: "Citizen Complaints & Police",
           color: "fuchsia",
           items: [
-            { id: "grs", title: "Grievance Redress System (GRS)", url: "https://grs.gov.bd/", official: true },
-            { id: "gd", title: "Online GD (General Diary)", url: "https://gd.police.gov.bd/", official: true },
-            { id: "police", title: "Bangladesh Police", url: "https://www.police.gov.bd/", official: true },
-            { id: "999", title: "National Emergency Service 999", url: "https://999.gov.bd/", official: true },
+            { id: "grs", title: "GRS", url: "https://grs.gov.bd/", official: true },
+            { id: "gd", title: "Online GD", url: "https://gd.police.gov.bd/", official: true },
+            { id: "999", title: "Emergency Service 999", url: "https://999.gov.bd/", official: true }
           ]
         },
         {
@@ -343,4 +324,402 @@
           name: "Health & Vaccination",
           color: "lime",
           items: [
-            { id: "surokkha", title: "Surokkha (Vaccine)", url: "https://surokkha.gov
+            { id: "surokkha", title: "Surokkha", url: "https://surokkha.gov.bd/", official: true },
+            { id: "dghs", title: "DGHS", url: "https://dghs.gov.bd/", official: true },
+            { id: "mohfw", title: "Ministry of Health", url: "https://www.mohfw.gov.bd/", official: true }
+          ]
+        }
+      ]
+    };
+
+    const LS_DATA_KEY = "sns_links_v1";
+    const LS_FAV_KEY = "sns_favs_v1";
+
+    let appData = loadData();
+    let favorites = loadFavorites();
+    let activeTab = "all";
+    let currentSearch = "";
+    let editing = { categoryId: null, itemId: null };
+
+    function loadData() {
+      const raw = localStorage.getItem(LS_DATA_KEY);
+      if (!raw) return JSON.parse(JSON.stringify(defaultData));
+      try { return JSON.parse(raw); } catch { return JSON.parse(JSON.stringify(defaultData)); }
+    }
+
+    function saveData() {
+      localStorage.setItem(LS_DATA_KEY, JSON.stringify(appData));
+    }
+
+    function loadFavorites() {
+      const raw = localStorage.getItem(LS_FAV_KEY);
+      if (!raw) return {};
+      try { return JSON.parse(raw); } catch { return {}; }
+    }
+
+    function saveFavorites() {
+      localStorage.setItem(LS_FAV_KEY, JSON.stringify(favorites));
+    }
+
+    const sectionsEl = document.getElementById("sections");
+    const favoritesViewEl = document.getElementById("favoritesView");
+    const favoritesGridEl = document.getElementById("favoritesGrid");
+    const emptySearchEl = document.getElementById("emptySearch");
+    const emptyFavEl = document.getElementById("emptyFavorites");
+
+    const colorMap = {
+      emerald: { badge: "bg-emerald-500/15 text-emerald-300", dot: "bg-emerald-400" },
+      teal:    { badge: "bg-teal-500/15 text-teal-300", dot: "bg-teal-400" },
+      sky:     { badge: "bg-sky-500/15 text-sky-300", dot: "bg-sky-400" },
+      violet:  { badge: "bg-violet-500/15 text-violet-300", dot: "bg-violet-400" },
+      amber:   { badge: "bg-amber-500/15 text-amber-300", dot: "bg-amber-400" },
+      rose:    { badge: "bg-rose-500/15 text-rose-300", dot: "bg-rose-400" },
+      cyan:    { badge: "bg-cyan-500/15 text-cyan-300", dot: "bg-cyan-400" },
+      fuchsia: { badge: "bg-fuchsia-500/15 text-fuchsia-300", dot: "bg-fuchsia-400" },
+      lime:    { badge: "bg-lime-500/15 text-lime-300", dot: "bg-lime-400" }
+    };
+
+    function itemKey(cat, item) {
+      return `${cat.id}__${item.id}`;
+    }
+
+    function favIcon(active) {
+      return active
+        ? `<svg class="w-5 h-5 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M11.645 20.91l-.007-.003-.022-.01a15.247 15.247 0 01-.383-.18 25.18 25.18 0 01-4.244-2.513C4.688 16.182 2 13.233 2 9.5 2 7.015 4.015 5 6.5 5c1.554 0 2.94.74 3.83 1.874A5.044 5.044 0 0114.5 5C16.985 5 19 7.015 19 9.5c0 3.733-2.688 6.682-4.989 8.704a25.175 25.175 0 01-4.244 2.513l-.383.18-.022.01-.007.003a.75.75 0 01-.61 0z"/></svg>`
+        : `<svg class="w-5 h-5 text-slate-300" viewBox="0 0 24 24" fill="none"><path d="M12 21s-8-4.5-8-11A4 4 0 0 1 8 6c1.657 0 3 .836 4 2 1-1.164 2.343-2 4-2a4 4 0 0 1 4 4c0 6.5-8 11-8 11z" stroke="currentColor" stroke-width="1.5"/></svg>`;
+    }
+
+    function filterItemBySearch(item) {
+      const q = currentSearch.trim().toLowerCase();
+      if (!q) return true;
+      return item.title.toLowerCase().includes(q);
+    }
+
+    function buildServiceCardHTML(cat, item) {
+      const isFav = !!favorites[itemKey(cat, item)];
+      const colors = colorMap[cat.color] || colorMap.emerald;
+      const officialBadge = item.official
+        ? `<span class="px-2 py-0.5 rounded pill bg-emerald-500/15 text-emerald-300 text-[11px]">Official</span>`
+        : `<span class="px-2 py-0.5 rounded pill bg-white/10 text-slate-300 text-[11px]">External/Placeholder</span>`;
+
+      return `
+        <div class="bg-tile border border-white/10 rounded-2xl p-4 hover:bg-white/[.14] transition shadow-soft ${isFav ? "ring-fav" : ""}" data-cat="${cat.id}" data-item="${item.id}">
+          <div class="flex items-start justify-between gap-3">
+            <div class="min-w-0">
+              <p class="font-medium text-slate-100 truncate">${item.title}</p>
+              <div class="mt-1 flex items-center gap-2">
+                ${officialBadge}
+                <span class="text-[11px] text-slate-400">${item.url ? "Opens in new tab" : "Add link"}</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-1">
+              <button title="${isFav ? "Remove from favorites" : "Add to favorites"}" class="btn-fav p-2 rounded-xl hover:bg-white/10">
+                ${favIcon(isFav)}
+              </button>
+              <button title="Edit" class="btn-edit-top p-2 rounded-xl hover:bg-white/10">
+                <svg class="w-5 h-5 text-slate-300" viewBox="0 0 24 24" fill="currentColor">
+                  <circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="mt-4 flex items-center gap-2">
+            <button class="btn-open px-3 py-2 rounded-lg bg-white/10 hover:bg-white/15 text-slate-100">${item.url ? "Open" : "Add Link"}</button>
+            <button class="btn-edit px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300">Edit</button>
+          </div>
+        </div>
+      `;
+    }
+
+    function buildCategorySection(cat) {
+      const colors = colorMap[cat.color] || colorMap.emerald;
+      const visibleItems = cat.items.filter(filterItemBySearch);
+
+      const section = document.createElement("section");
+      section.className = "fade-in";
+      section.innerHTML = `
+        <div class="flex items-center justify-between mb-3">
+          <div class="flex items-center gap-3">
+            <span class="w-2 h-2 rounded-full ${colors.dot}"></span>
+            <h3 class="text-lg font-semibold">${cat.name}</h3>
+            <span class="text-xs ${colors.badge} px-2 py-1 rounded">${visibleItems.length} item${visibleItems.length !== 1 ? "s" : ""}</span>
+          </div>
+          <div class="text-xs text-slate-400">Tap edit to update</div>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          ${visibleItems.map(item => buildServiceCardHTML(cat, item)).join("")}
+        </div>
+      `;
+      return section;
+    }
+
+    function renderFavorites() {
+      favoritesGridEl.innerHTML = "";
+      const favItems = [];
+
+      appData.categories.forEach(cat => {
+        cat.items.forEach(item => {
+          if (favorites[itemKey(cat, item)]) {
+            favItems.push({ cat, item });
+          }
+        });
+      });
+
+      emptyFavEl.classList.toggle("hidden", favItems.length > 0);
+
+      favItems.forEach(({ cat, item }) => {
+        const card = document.createElement("div");
+        card.className = "bg-tile border border-white/10 rounded-2xl p-4 hover:bg-white/[.14] transition shadow-soft";
+        card.innerHTML = `
+          <div class="flex items-start justify-between gap-3">
+            <div class="min-w-0">
+              <p class="font-medium text-slate-100 truncate">${item.title}</p>
+              <p class="text-xs text-slate-400 mt-0.5">${cat.name}</p>
+            </div>
+            <button class="btn-unfav p-2 rounded-xl hover:bg-white/10">${favIcon(true)}</button>
+          </div>
+          <div class="mt-4 flex items-center gap-2">
+            <button class="btn-open px-3 py-2 rounded-lg bg-white/10 hover:bg-white/15 text-slate-100">${item.url ? "Open" : "Add Link"}</button>
+            <button class="btn-edit px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300">Edit</button>
+          </div>
+        `;
+
+        favoritesGridEl.appendChild(card);
+
+        card.querySelector(".btn-unfav").addEventListener("click", () => {
+          delete favorites[itemKey(cat, item)];
+          saveFavorites();
+          showToast("Removed from favorites");
+          render();
+        });
+
+        card.querySelector(".btn-open").addEventListener("click", () => openService(item));
+        card.querySelector(".btn-edit").addEventListener("click", () => openEdit(cat.id, item.id));
+      });
+    }
+
+    function render() {
+      const tabAll = document.getElementById("tabAll");
+      const tabFav = document.getElementById("tabFav");
+
+      if (activeTab === "all") {
+        tabAll.className = "px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-slate-100 transition";
+        tabFav.className = "px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 transition";
+        sectionsEl.classList.remove("hidden");
+        favoritesViewEl.classList.add("hidden");
+      } else {
+        tabAll.className = "px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 transition";
+        tabFav.className = "px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-slate-100 transition";
+        sectionsEl.classList.add("hidden");
+        favoritesViewEl.classList.remove("hidden");
+      }
+
+      sectionsEl.innerHTML = "";
+
+      const filteredCats = appData.categories
+        .map(cat => ({ ...cat, items: cat.items.filter(filterItemBySearch) }))
+        .filter(cat => cat.items.length > 0);
+
+      filteredCats.forEach(cat => {
+        sectionsEl.appendChild(buildCategorySection(cat));
+      });
+
+      emptySearchEl.classList.toggle("hidden", !(currentSearch.trim() && filteredCats.length === 0));
+
+      sectionsEl.querySelectorAll("[data-cat]").forEach(card => {
+        const catId = card.getAttribute("data-cat");
+        const itemId = card.getAttribute("data-item");
+        const cat = appData.categories.find(c => c.id === catId);
+        const item = cat.items.find(i => i.id === itemId);
+
+        card.querySelector(".btn-fav").addEventListener("click", (e) => {
+          e.stopPropagation();
+          toggleFavorite(cat, item);
+          render();
+        });
+
+        card.querySelector(".btn-open").addEventListener("click", (e) => {
+          e.stopPropagation();
+          openService(item);
+        });
+
+        card.querySelector(".btn-edit").addEventListener("click", (e) => {
+          e.stopPropagation();
+          openEdit(catId, itemId);
+        });
+
+        card.querySelector(".btn-edit-top").addEventListener("click", (e) => {
+          e.stopPropagation();
+          openEdit(catId, itemId);
+        });
+      });
+
+      renderFavorites();
+    }
+
+    function toggleFavorite(cat, item) {
+      const key = itemKey(cat, item);
+      if (favorites[key]) {
+        delete favorites[key];
+        showToast("Removed from favorites");
+      } else {
+        favorites[key] = { catId: cat.id, itemId: item.id };
+        showToast("Added to favorites");
+      }
+      saveFavorites();
+    }
+
+    function openService(item) {
+      if (item.url) {
+        window.open(item.url, "_blank", "noopener,noreferrer");
+      } else {
+        showToast("No link set yet. Use Edit to add one.");
+      }
+    }
+
+    const editModal = document.getElementById("editModal");
+    const editTitleEl = document.getElementById("editTitle");
+    const editUrlEl = document.getElementById("editUrl");
+
+    function openEdit(catId, itemId) {
+      editing = { categoryId: catId, itemId };
+      const cat = appData.categories.find(c => c.id === catId);
+      const item = cat.items.find(i => i.id === itemId);
+
+      editTitleEl.value = item.title || "";
+      editUrlEl.value = item.url || "";
+      editModal.classList.remove("hidden");
+    }
+
+    document.getElementById("closeEdit").addEventListener("click", () => {
+      editModal.classList.add("hidden");
+    });
+
+    document.getElementById("btnSaveEdit").addEventListener("click", () => {
+      const cat = appData.categories.find(c => c.id === editing.categoryId);
+      const item = cat.items.find(i => i.id === editing.itemId);
+      if (!cat || !item) return;
+
+      item.title = editTitleEl.value.trim() || item.title;
+      item.url = editUrlEl.value.trim() || null;
+
+      saveData();
+      editModal.classList.add("hidden");
+      showToast("Service updated");
+      render();
+    });
+
+    document.getElementById("btnDeleteService").addEventListener("click", () => {
+      const cat = appData.categories.find(c => c.id === editing.categoryId);
+      if (!cat) return;
+      const idx = cat.items.findIndex(i => i.id === editing.itemId);
+      if (idx === -1) return;
+
+      delete favorites[itemKey(cat, cat.items[idx])];
+      cat.items.splice(idx, 1);
+
+      saveFavorites();
+      saveData();
+      editModal.classList.add("hidden");
+      showToast("Service removed");
+      render();
+    });
+
+    const adminModal = document.getElementById("adminModal");
+
+    document.getElementById("openAdmin").addEventListener("click", () => {
+      adminModal.classList.remove("hidden");
+    });
+
+    document.getElementById("closeAdmin").addEventListener("click", () => {
+      adminModal.classList.add("hidden");
+    });
+
+    document.getElementById("btnResetData").addEventListener("click", () => {
+      appData = JSON.parse(JSON.stringify(defaultData));
+      saveData();
+      showToast("Data reset to defaults");
+      render();
+    });
+
+    document.getElementById("btnExportData").addEventListener("click", () => {
+      const blob = new Blob([JSON.stringify(appData, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "smart-nagorik-seba-data.json";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+      showToast("Exported JSON");
+    });
+
+    document.getElementById("btnFillExample").addEventListener("click", () => {
+      document.getElementById("jsonInput").value = JSON.stringify({
+        categories: [
+          {
+            id: "custom-sample",
+            name: "Sample Category",
+            color: "emerald",
+            items: [
+              { id: "sample-1", title: "Sample Official Link", url: "https://example.gov.bd/", official: true },
+              { id: "sample-2", title: "Sample Placeholder", url: null, official: false }
+            ]
+          }
+        ]
+      }, null, 2);
+    });
+
+    document.getElementById("btnImportData").addEventListener("click", () => {
+      try {
+        const incoming = JSON.parse(document.getElementById("jsonInput").value.trim());
+        if (!incoming.categories || !Array.isArray(incoming.categories)) {
+          throw new Error("Invalid");
+        }
+        appData = incoming;
+        saveData();
+        adminModal.classList.add("hidden");
+        showToast("Imported JSON successfully");
+        render();
+      } catch (e) {
+        showToast("Invalid JSON. Please check and try again.");
+      }
+    });
+
+    document.getElementById("searchInput").addEventListener("input", (e) => {
+      currentSearch = e.target.value;
+      render();
+    });
+
+    document.getElementById("tabAll").addEventListener("click", () => {
+      activeTab = "all";
+      render();
+    });
+
+    document.getElementById("tabFav").addEventListener("click", () => {
+      activeTab = "fav";
+      render();
+    });
+
+    function showToast(msg) {
+      const t = document.createElement("div");
+      t.className = "toast glass rounded-xl p-3 text-sm text-slate-100";
+      t.textContent = msg;
+      document.getElementById("toastArea").appendChild(t);
+      setTimeout(() => t.remove(), 3600);
+    }
+
+    function init() {
+      render();
+      setTimeout(() => {
+        document.getElementById("splash").classList.add("hidden");
+        document.getElementById("app").classList.remove("hidden");
+      }, 1200);
+    }
+
+    init();
+  </script>
+</body>
+</html>
+        
