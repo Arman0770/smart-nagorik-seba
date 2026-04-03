@@ -710,25 +710,35 @@
       setTimeout(() => t.remove(), 3600);
     }
 
-    function init() {
-      render();
-      setTimeout(() => {
-        document.getElementById("splash").classList.add("hidden");
-        document.getElementById("app").classList.remove("hidden");
-      }, 1200);
-    }
-const isAdmin = new URLSearchParams(window.location.search).get("admin") === "emon123";
+    function hidePublicEditOptions() {
+  const isAdmin = new URLSearchParams(window.location.search).get("admin") === "emon123";
 
-if (!isAdmin) {
-  const adminBtn = document.getElementById("openAdmin");
-  if (adminBtn) adminBtn.style.display = "none";
+  if (!isAdmin) {
+    const adminBtn = document.getElementById("openAdmin");
+    if (adminBtn) adminBtn.style.display = "none";
 
-  document.querySelectorAll("button").forEach(btn => {
-    if (btn.innerText.trim() === "Edit") {
-      btn.style.display = "none";
-    }
-  });
+    document.querySelectorAll("button").forEach(btn => {
+      if (btn.innerText.trim() === "Edit") {
+        btn.style.display = "none";
       }
+    });
+
+    document.querySelectorAll(".btn-edit, .btn-edit-top").forEach(btn => {
+      btn.style.display = "none";
+    });
+  }
+}
+
+function init() {
+  render();
+  setTimeout(() => {
+    document.getElementById("splash").classList.add("hidden");
+    document.getElementById("app").classList.remove("hidden");
+    hidePublicEditOptions();
+  }, 1200);
+}
+
+init();
     init();
   </script>
 </body>
