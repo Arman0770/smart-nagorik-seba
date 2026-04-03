@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="keywords" content="NID Bangladesh, Passport BD, BRTA license, Bangladesh services, education result BD, smart nagorik seba">
   <meta name="description" content="All Bangladesh government services in one place. NID, Passport, BRTA, Tax, Education board results and more. Smart Nagorik Seba.">
   <title>Smart Nagorik Seba - NID, Passport, BRTA, Tax, Education Services BD</title>
@@ -15,6 +16,51 @@
   <meta name="description" content="Bangladesh government services hub for NID, Passport, BRTA, Tax, Education and more." />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    body {
+  -webkit-tap-highlight-color: transparent;
+    }
+    /* Mobile UI fix */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Container spacing */
+main, section {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  h1 {
+    font-size: 24px !important;
+  }
+
+  h2 {
+    font-size: 20px !important;
+  }
+
+  p {
+    font-size: 15px !important;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .glass, .card {
+    padding: 12px !important;
+  }
+}
+
+/* Tap effect remove */
+body {
+  -webkit-tap-highlight-color: transparent;
+}
     * { outline-color: #10b981; }
     .fade-in { animation: fadeIn 0.6s ease both; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(4px);} to { opacity: 1; transform: translateY(0);} }
